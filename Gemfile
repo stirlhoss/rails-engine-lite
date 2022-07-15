@@ -36,6 +36,7 @@ group :development, :test do
   gem 'faker'
   gem 'pry'
   gem 'rspec-rails'
+  gem 'solargraph'
 end
 
 group :development do
