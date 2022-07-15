@@ -97,6 +97,23 @@ RSpec.describe 'Items API' do
 
       expect(Item.all.count).to eq 5
     end
+
+    it 'can delete empty invoices associated with deleted items' do
+      merchant = Merchant.create!(name: 'Bobby Brown')
+      item = create(:item, merchant_id: merchant.id)
+      customer = Customer.create!(first_name: 'Steve', last_name: 'Bengels')
+      invoice = Invoice.create!(customer_id: customer.id, merchant_id: merchant.id, status: 'pending')
+      inv_items = InvoiceItem.create!(item_id: item.id, invoice_id: invoice.id, quantity: 5, unit_price: 10.15)
+
+      expect(Item.count).to eq 1
+      expect(Invoice.count).to eq 1
+
+      delete "/api/v1/items/#{item.id}"
+
+      expect(response).to be_successful
+      expect(Item.count).to eq 0
+      expect(Invoice.count).to eq 0
+    end
   end
 
   describe 'update' do
