@@ -8,6 +8,9 @@ Rails.application.routes.draw do
       resources :merchants, only: [:index, :show] do
         resources :items, only: [:index], controller: 'merchant_items'
       end
+      namespace :items do
+        get '/find_all', controller: :items_find, action: :find_all
+      end
       resources :items do
         get '/merchant', controller: :item_merchants, action: :show
       end
