@@ -5,7 +5,7 @@ Rails.application.routes.draw do
       namespace :merchants do
         get '/find', controller: :merchant_find, action: :find
       end
-      resources :merchants, only: [:index, :show] do
+      resources :merchants, only: %i[index show] do
         resources :items, only: [:index], controller: 'merchant_items'
       end
       namespace :items do
@@ -13,6 +13,9 @@ Rails.application.routes.draw do
       end
       resources :items do
         get '/merchant', controller: :item_merchants, action: :show
+      end
+      namespace :revenue do
+        resources :merchants, only: [:index]
       end
     end
   end
