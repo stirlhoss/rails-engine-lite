@@ -1,8 +1,8 @@
 * Rails Engine
+- This is an API that I built from scratch. It is just a simple API that allows calls to retrieve merchants and items that they sell.
 
 ** Ruby version
-
-** System dependencies
+- Built on Rails 5.2.8 and Ruby 2.7.4
 
 ** Configuration
 
