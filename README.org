@@ -5,13 +5,13 @@
 - Built on Rails 5.2.8 and Ruby 2.7.4
 
 ** Configuration
-
-** Database creation
-
-** Database initialization
+- Clone down the repository and =cd= into it.
+- Run =bundle= and =rails db:{create,migrate,seed}=
+- Start a local rails server with =rails s=
 
 ** How to run the test suite
-
-** Services (job queues, cache servers, search engines, etc.)
+- This app includes a test suite complete with sad path testing.
+- To run the test suite, make sure you are in the root of the project and run =bundle exec rspec=
+- Testing files are located in =/spec/requests/api/v1=
 
 ** Deployment instructions
