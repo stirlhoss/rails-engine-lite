@@ -14,4 +14,17 @@
 - To run the test suite, make sure you are in the root of the project and run =bundle exec rspec=
 - Testing files are located in =/spec/requests/api/v1=
 
-** Deployment instructions
+** Endpoints
+|-----------------------------------------------+---------------------------------------|
+| Routes                                        | Information available                 |
+|-----------------------------------------------+---------------------------------------|
+| GET /api/v1/merchants                         | List of all merchants                 |
+| GET /api/v1/merchants/:id                     | Shows one merchants details           |
+| GET /api/v1/merchants/:id/items               | List of a specific merchants items    |
+| GET /api/v1/merchants/find?name=merchant_name | Searches for a merchant based on name |
+| GET /api/v1/items/find_all?name=item_name     | Searches for all items based on name  |
+| GET /api/v1/items                             | Gets an index of items                |
+| POST /api/v1/items                            | Creates an item                       |
+| PATCH /api/v1/items                           | Updates an item                       |
+| DELETE /api/v1/items                          | Destroys an item                      |
+|-----------------------------------------------+---------------------------------------|
